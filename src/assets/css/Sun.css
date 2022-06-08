@@ -1,0 +1,8 @@
+.Sun{
+    height: 30rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    margin-top: 2%;
+    margin-left: 12%;
+    background-image: linear-gradient(rgb(255, 188, 2), rgb(255, 115, 0));
+}

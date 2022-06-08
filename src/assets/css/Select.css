@@ -1,0 +1,55 @@
+.Select{
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    width: 10rem;
+}
+
+.Select button{
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    position: relative;
+}
+
+.Select button::after{
+    content:"▼";
+    display: inline-block;
+    right: 2rem;
+    position: absolute;
+}
+
+.Select ul{
+    box-sizing: border-box;
+    top: 2rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: absolute;
+    opacity: 0;
+    transform: none;
+    transition: all .3s;
+    list-style: none;
+}
+
+.Select ul.focus{
+    opacity: 1;
+    transform: translateY(.5rem);
+    transition: all .3s;
+}
+
+.Select ul.focus li{
+    cursor: pointer;
+    transform: none;
+    transition: all .3s;
+}
+
+.Select ul.focus li:hover{
+    transform: translateX(.3rem);
+    transition: all .3s;
+}

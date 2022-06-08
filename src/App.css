@@ -1,0 +1,115 @@
+html,
+body {
+  user-select: none;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-image: rgb(252, 53, 14);
+  background-image: -moz-linear-gradient(
+    0deg,
+    rgba(252, 53, 14, 1) 0%,
+    rgba(119, 118, 255, 1) 100%
+  );
+  background-image: -webkit-linear-gradient(
+    0deg,
+    rgba(252, 53, 14, 1) 0%,
+    rgba(119, 118, 255, 1) 100%
+  );
+  background-image: linear-gradient(
+    0deg,
+    rgba(252, 53, 14, 1) 0%,
+    rgba(119, 118, 255, 1) 100%
+  );
+
+  background-repeat: no-repeat;
+}
+
+.app-wrapper{
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.relative-wrapper{
+  position: relative;
+}
+
+button{
+  cursor: pointer;
+}
+
+.Button{
+  border: 0;
+  padding: 1rem 2rem;
+  background-color: rgb(255, 115, 0);
+  transform: none;
+  transition: all .3s;
+}
+
+.Button:hover{
+  transform: translateY(-3px);
+  transition: all .3s;
+}
+
+.centerer{
+  display: flex;
+  justify-content: center;
+}
+
+input{
+  outline: none;
+}
+
+.squircle{
+  clip-path: url(#squircleClip);
+}
+
+.margin-top-1{
+  margin-top: 1rem;
+}
+
+.margin-right-4{
+  margin-right: 4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* width */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255, .3);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  transition: all .3s;
+  background: rgb(255, 255, 255, .3);
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  transition: all .3s;
+  background: rgb(255, 255, 255, .6);
+}
+
+.container{
+  padding: 0;
+  margin: 0;
+}

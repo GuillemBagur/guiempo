@@ -1,0 +1,32 @@
+.Cloud{
+    opacity: .5;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-left: 23rem;
+}
+
+.Cloud li{
+    position: absolute;
+    display: inline-block;
+    height: 5rem;
+    aspect-ratio: 3 / 1;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.Cloud li:nth-child(1){
+    transform: translateX(70%);
+}
+
+.Cloud li:nth-child(2){
+    transform: translateY(-40%);
+}
+
+.Cloud li:nth-child(3){
+    transform: translateX(-70%);
+}
+
+.Cloud li:nth-child(4){
+    transform: translateY(20%);
+}

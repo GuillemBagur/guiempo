@@ -1,0 +1,10 @@
+.Carrousel{
+    list-style: none;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.Carrousel .Period{
+    display: inline-block;
+}
