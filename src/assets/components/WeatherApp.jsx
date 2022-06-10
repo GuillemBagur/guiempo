@@ -25,7 +25,7 @@ export default function WeatherApp() {
   const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${keys.openWeather}&units=metric`;
 
   const handleSetUserType = (value) => {
-    const savedOptions = JSON.parse(localStorage.getItem("guiempo") || []);
+    const savedOptions = JSON.parse(localStorage.getItem("guiempo") || {});
     savedOptions.userType = value;
     localStorage.setItem("guiempo", JSON.stringify(savedOptions));
     setUserType(value);
