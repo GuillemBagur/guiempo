@@ -80,7 +80,7 @@ export default function WeatherApp() {
       </div>
 
       <Carrousel userType={userType} rawData={weatherRes.hourly} timeType="dt" />
-      <Carrousel userType={userType} rawData={weatherRes.daily} />
+      <Carrousel userType={userType} rawData={weatherRes.daily} timeType="" />
     </div>
   );
 }

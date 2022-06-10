@@ -78,9 +78,19 @@ export default function Period({ data, userType, timeType }) {
 
   parseData(data);
 
+  let timeTypeIcon = "";
+  let timeTypeText = "";
+  if(timeType){
+    if(timeType === "dt"){
+      timeTypeText += `🕑 ${data[timeType]}`;
+    }
+    
+    
+  }
+
   return (
     <li className="Period squircle">
-      🕐 {data[timeType]}
+      {timeTypeText}
       <ul>
         {preferedParams[userType].map((el) => {
           if(!data[el]) return;
