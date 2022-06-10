@@ -9,7 +9,7 @@ import { keys, coordinates } from "../js/data";
 import { preferedParams } from "../js/data.js";
 
 export default function WeatherApp() {
-  let savedUserType = JSON.parse(localStorage.getItem("guiempo")).userType;
+  let savedUserType = (JSON.parse(localStorage.getItem("guiempo"))||{userType: "tourist"}).userType;
   if (!savedUserType) {
     localStorage.setItem("guiempo", JSON.stringify({}));
     savedUserType = "tourist";
