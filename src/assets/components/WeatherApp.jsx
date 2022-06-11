@@ -91,7 +91,7 @@ export default function WeatherApp() {
 
   return (
     <div className="relative-wrapper">
-      <div className="margin-top-1 centerer">
+      <div className="margin-top-1 centerer breakpoint">
         <Select
           defaultValue={userType}
           options={Object.keys(preferedParams)}
@@ -103,7 +103,7 @@ export default function WeatherApp() {
           search={handleSearch}
         />
         <datalist id="available-locations">
-          {availableLocations.map((loc) => (
+          {(availableLocations || []).map((loc) => (
             <option value={loc.label} />
           ))}
         </datalist>

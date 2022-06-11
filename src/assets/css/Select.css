@@ -35,9 +35,11 @@
     transform: none;
     transition: all .3s;
     list-style: none;
+    pointer-events: none;
 }
 
 .Select ul.focus{
+    pointer-events: all;
     opacity: 1;
     transform: translateY(.5rem);
     transition: all .3s;

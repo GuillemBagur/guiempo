@@ -29,6 +29,11 @@ body {
   background-repeat: no-repeat;
 }
 
+
+input, h1, h2, div{
+  max-width: 100vw;
+}
+
 .app-wrapper {
   width: 100%;
   position: absolute;
@@ -121,4 +126,70 @@ input {
   padding: 1rem;
   border-radius: 100px;
   background-color: rgba(255, 255, 255, .3);
+}
+
+
+@media only screen and (max-width: 850px) {
+  .centerer.breakpoint{
+    display: block;
+    max-width: 100vw;
+    text-align: center;
+  }
+
+  .Title{
+    border-radius: 0 0 70px 70px;
+    text-align: center;
+  }
+
+  .Title h1{
+    font-size: 3rem;
+    letter-spacing: 1rem;
+  }
+
+  .Title h2{
+    font-size: 1rem;
+  }
+
+  .SearchBar{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .SearchBar input{
+    width: 80%;
+  }
+}
+
+
+@media only screen and (max-width: 350px) {
+  .centerer.breakpoint{
+    display: block;
+    max-width: 100vw;
+    text-align: center;
+  }
+
+  .Title{
+    text-align: center;
+  }
+
+  .Title h1{
+    font-size: 2.5rem;
+    letter-spacing: .8rem;
+  }
+
+  .Title h2{
+    font-size: 1rem;
+  }
+
+  .SearchBar{
+    display: block;
+    justify-content: center;
+    width: 80%;
+    text-align: center;
+  }
+
+  .SearchBar input{
+    width: 100%;
+  }
 }
