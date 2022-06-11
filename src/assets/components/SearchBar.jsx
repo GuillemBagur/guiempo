@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../css/SearchBar.css";
 
-export default function SearchBar({ search }) {
+export default function SearchBar({ search, fetchList }) {
   const [location, setLocation] = useState("Ciutadella");
-
   const handleKeyDown = (e) => {
-    setLocation(e.target.value);
+    const value = e.target.value;
+    setLocation(value);
+    if (value.length >= 3) {
+      fetchList(value);
+    }
   };
 
   const getLocation = () => {
@@ -15,8 +18,16 @@ export default function SearchBar({ search }) {
 
   return (
     <div className="SearchBar">
-      <input type="text" onKeyDown={handleKeyDown} placeholder="Ubicación" />
-      <button className="Button squircle" onClick={getLocation}>Buscar</button>
+      <input
+        type="text"
+        list="available-locations"
+        onKeyDown={handleKeyDown}
+        placeholder="Ubicación"
+      />
+      <button className="Button squircle" onClick={getLocation}>
+        Buscar
+      </button>
+      
     </div>
   );
 }

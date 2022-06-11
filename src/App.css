@@ -1,3 +1,7 @@
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 html,
 body {
   user-select: none;
@@ -25,64 +29,53 @@ body {
   background-repeat: no-repeat;
 }
 
-.app-wrapper{
+.app-wrapper {
   width: 100%;
   position: absolute;
   z-index: 2;
 }
 
-.relative-wrapper{
+.relative-wrapper {
   position: relative;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-.Button{
+.Button {
   border: 0;
   padding: 1rem 2rem;
   background-color: rgb(255, 115, 0);
   transform: none;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
-.Button:hover{
+.Button:hover {
   transform: translateY(-3px);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
-.centerer{
+.centerer {
   display: flex;
   justify-content: center;
 }
 
-input{
+input {
   outline: none;
 }
 
-.squircle{
+.squircle {
   clip-path: url(#squircleClip);
 }
 
-.margin-top-1{
+.margin-top-1 {
   margin-top: 1rem;
 }
 
-.margin-right-4{
+.margin-right-4 {
   margin-right: 4rem;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* width */
 *::-webkit-scrollbar {
@@ -91,25 +84,41 @@ input{
 
 /* Track */
 *::-webkit-scrollbar-track {
-  background: rgb(255, 255, 255, .3);
+  background: rgb(255, 255, 255, 0.3);
   border-radius: 100px;
   overflow: hidden;
 }
 
 /* Handle */
 *::-webkit-scrollbar-thumb {
-  transition: all .3s;
-  background: rgb(255, 255, 255, .3);
+  transition: all 0.3s;
+  background: rgb(255, 255, 255, 0.3);
   border-radius: 100px;
 }
 
 /* Handle on hover */
 *::-webkit-scrollbar-thumb:hover {
-  transition: all .3s;
-  background: rgb(255, 255, 255, .6);
+  transition: all 0.3s;
+  background: rgb(255, 255, 255, 0.6);
 }
 
-.container{
+.container {
   padding: 0;
   margin: 0;
+}
+
+
+.carrousels-container{
+  overflow: hidden;
+  width: 98%;
+}
+
+.carrousels-container h3{
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  display: inline-block;
+  margin-left: 5rem;
+  padding: 1rem;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, .3);
 }

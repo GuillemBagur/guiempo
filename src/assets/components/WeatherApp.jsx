@@ -9,7 +9,9 @@ import { keys, coordinates } from "../js/data";
 import { preferedParams } from "../js/data.js";
 
 export default function WeatherApp() {
-  let savedUserType = (JSON.parse(localStorage.getItem("guiempo"))||{userType: "tourist"}).userType;
+  let savedUserType = (
+    JSON.parse(localStorage.getItem("guiempo")) || { userType: "tourist" }
+  ).userType;
   if (!savedUserType) {
     localStorage.setItem("guiempo", JSON.stringify({}));
     savedUserType = "tourist";
@@ -17,6 +19,8 @@ export default function WeatherApp() {
 
   const [userType, setUserType] = useState(savedUserType);
   const [weatherRes, setWeatherRes] = useState([]);
+  const [location, setLocation] = useState("Ciutadella de Menorca");
+  const [availableLocations, setAvailableLocations] = useState([]);
   const [coords, setCoords] = useState({
     lat: coordinates.lat,
     lon: coordinates.lon,
@@ -25,7 +29,7 @@ export default function WeatherApp() {
   const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${keys.openWeather}&units=metric`;
 
   const handleSetUserType = (value) => {
-    const savedOptions = JSON.parse(localStorage.getItem("guiempo") || []);
+    const savedOptions = JSON.parse(localStorage.getItem("guiempo")) || {};
     savedOptions.userType = value;
     localStorage.setItem("guiempo", JSON.stringify(savedOptions));
     setUserType(value);
@@ -46,10 +50,18 @@ export default function WeatherApp() {
    * @param {Object} res - If it's an array, it'll get the first element.
    */
   const getNewLocation = (res) => {
-    const location = res.data[0];
-    const { latitude, longitude } = location;
-    const newCoords = { lat: latitude, lon: longitude };
-    setCoords(newCoords);
+    try {
+      const thisLocation = res.data[0];
+      const { latitude, longitude } = thisLocation;
+      const newCoords = { lat: latitude, lon: longitude };
+      setLocation(thisLocation.label);
+      setCoords(newCoords);
+      console.log(location, thisLocation.label);
+    }
+    catch(err) {
+      alert("No se ha encontrado la ubicación. Revisa la ortografía");
+    }
+    
   };
 
   /**
@@ -67,6 +79,16 @@ export default function WeatherApp() {
     fetchData(weatherUrl, setWeatherRes);
   }, [, coords]);
 
+  const fetchList = (location) => {
+    const locaionUrl = `http://api.positionstack.com/v1/forward?access_key=${keys.positionStack}&query=${location}`;
+    fetchData(locaionUrl, genList);
+  };
+
+  const genList = (rawData) => {
+    const data = rawData.data;
+    setAvailableLocations(data);
+  };
+
   return (
     <div className="relative-wrapper">
       <div className="margin-top-1 centerer">
@@ -76,11 +98,26 @@ export default function WeatherApp() {
           whenChange={handleSetUserType}
           givenClasses={["margin-right-4"]}
         />
-        <SearchBar search={handleSearch} />
+        <SearchBar
+          fetchList={fetchList}
+          search={handleSearch}
+        />
+        <datalist id="available-locations">
+          {availableLocations.map((loc) => (
+            <option value={loc.label} />
+          ))}
+        </datalist>
       </div>
 
-      <Carrousel userType={userType} rawData={weatherRes.hourly} timeType="dt" />
-      <Carrousel userType={userType} rawData={weatherRes.daily} timeType="" />
+      <div className="carrousels-container">
+        <h3>{location}</h3>
+        <Carrousel
+          userType={userType}
+          rawData={weatherRes.hourly}
+          timeType="dt"
+        />
+        <Carrousel userType={userType} rawData={weatherRes.daily} timeType="" />
+      </div>
     </div>
   );
 }

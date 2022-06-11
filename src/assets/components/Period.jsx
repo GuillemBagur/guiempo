@@ -52,7 +52,7 @@ export default function Period({ data, userType, timeType }) {
         for (let windKey in windRose) {
           const windName = windRose[windKey];
           // It always will get the lowest possible key in windRose
-          if (el <= windKey) {
+          if (el-22.5 <= windKey) {
             data[key] = windName;
             break;
           }
