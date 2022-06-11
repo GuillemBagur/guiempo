@@ -134,6 +134,7 @@ input {
     display: block;
     max-width: 100vw;
     text-align: center;
+    margin-left: 12%;
   }
 
   .Title{
@@ -153,22 +154,16 @@ input {
   .SearchBar{
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 95%;
   }
 
   .SearchBar input{
-    width: 80%;
+    width: 95%;
   }
 }
 
 
 @media only screen and (max-width: 350px) {
-  .centerer.breakpoint{
-    display: block;
-    max-width: 100vw;
-    text-align: center;
-  }
-
   .Title{
     text-align: center;
   }
@@ -185,8 +180,9 @@ input {
   .SearchBar{
     display: block;
     justify-content: center;
-    width: 80%;
+    width: 95%;
     text-align: center;
+    position: relative;
   }
 
   .SearchBar input{
