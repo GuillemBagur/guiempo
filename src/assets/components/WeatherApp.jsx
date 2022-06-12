@@ -51,12 +51,12 @@ export default function WeatherApp() {
    */
   const getNewLocation = (res) => {
     try {
-      const thisLocation = res.data[0];
-      const { latitude, longitude } = thisLocation;
-      const newCoords = { lat: latitude, lon: longitude };
-      setLocation(thisLocation.label);
+      const thisLocation = res[0];
+      const { lat, lon } = thisLocation;
+      const newCoords = { lat: lat, lon: lon };
+      setLocation(thisLocation.name);
       setCoords(newCoords);
-      console.log(location, thisLocation.label);
+      console.log(location, thisLocation.name);
     }
     catch(err) {
       alert("No se ha encontrado la ubicación. Revisa la ortografía");
@@ -71,8 +71,8 @@ export default function WeatherApp() {
    * @param {string} location
    */
   const handleSearch = (location) => {
-    const locaionUrl = `http://api.positionstack.com/v1/forward?access_key=${keys.positionStack}&query=${location}`;
-    fetchData(locaionUrl, getNewLocation);
+    const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=${keys.openWeather}`;
+    fetchData(locationUrl, getNewLocation);
   };
 
   useEffect(() => {
@@ -80,14 +80,19 @@ export default function WeatherApp() {
   }, [, coords]);
 
   const fetchList = (location) => {
-    const locaionUrl = `http://api.positionstack.com/v1/forward?access_key=${keys.positionStack}&query=${location}`;
-    fetchData(locaionUrl, genList);
+    const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=${keys.openWeather}`;
+    fetchData(locationUrl, genList);
   };
 
   const genList = (rawData) => {
-    const data = rawData.data;
+    const data = rawData;
+    console.log(data.length);
+    if(!data.length) return;
+    console.log(2);
     setAvailableLocations(data);
   };
+
+  console.log(availableLocations);
 
   return (
     <div className="relative-wrapper">
@@ -104,7 +109,7 @@ export default function WeatherApp() {
         />
         <datalist id="available-locations">
           {(availableLocations || []).map((loc) => (
-            <option value={loc.label} />
+            <option value={`${loc.name}, ${loc.country}`} />
           ))}
         </datalist>
       </div>

@@ -7,7 +7,7 @@ export default function SearchBar({ search, fetchList }) {
   const handleKeyDown = (e) => {
     const value = e.target.value;
     setLocation(value);
-    if (value.length > 1) {
+    if (value.length) {
       fetchList(value);
     }
   };
