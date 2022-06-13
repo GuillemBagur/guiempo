@@ -19,7 +19,7 @@ export default function WeatherApp() {
 
   const [userType, setUserType] = useState(savedUserType);
   const [weatherRes, setWeatherRes] = useState([]);
-  const [location, setLocation] = useState("Ciutadella de Menorca");
+  const [location, setLocation] = useState("Ciutadella, ES");
   const [availableLocations, setAvailableLocations] = useState([]);
   const [coords, setCoords] = useState({
     lat: coordinates.lat,
@@ -27,6 +27,10 @@ export default function WeatherApp() {
   });
 
   const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${keys.openWeather}&units=metric`;
+
+  const getLocationUrl = (location) => {
+    return `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=${keys.openWeather}`;
+  };
 
   const handleSetUserType = (value) => {
     const savedOptions = JSON.parse(localStorage.getItem("guiempo")) || {};
@@ -62,6 +66,18 @@ export default function WeatherApp() {
     }
   };
 
+  const getUsersCurrentLocation = () => {
+    let currentLocation = null;
+    navigator.geolocation.getCurrentPosition((res) => {
+      currentLocation = res.coords;
+      if (!currentLocation) return;
+      console.log(currentLocation);
+      setCoords({lat: currentLocation.latitude, lon:currentLocation.longitude});
+    });
+  };
+
+  getUsersCurrentLocation();
+
   /**
    * Fetches the results of the location API, with the desired location.
    * Then, it invokes the getNewLocation function, to extract the coordinates from the response.
@@ -69,7 +85,8 @@ export default function WeatherApp() {
    * @param {string} location
    */
   const handleSearch = (location) => {
-    const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=${keys.openWeather}`;
+    console.log(location);
+    const locationUrl = getLocationUrl(location);
     fetchData(locationUrl, getNewLocation);
   };
 
@@ -78,7 +95,7 @@ export default function WeatherApp() {
   }, [, coords]);
 
   const fetchList = (location) => {
-    const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=${keys.openWeather}`;
+    const locationUrl = getLocationUrl(location);
     fetchData(locationUrl, genList);
   };
 
@@ -97,7 +114,6 @@ export default function WeatherApp() {
     uniqueAvailableLocations.push(str);
   });
 
-  
   let renderedLocations = [];
 
   return (
@@ -112,11 +128,10 @@ export default function WeatherApp() {
         <SearchBar fetchList={fetchList} search={handleSearch} />
         <datalist id="available-locations">
           {(uniqueAvailableLocations || []).map((loc) => {
-            if(renderedLocations.includes(loc)) return;
+            if (renderedLocations.includes(loc)) return;
             renderedLocations.push(loc);
-            return(
-            <option value={loc} />
-          )})}
+            return <option value={loc} />;
+          })}
         </datalist>
       </div>
 

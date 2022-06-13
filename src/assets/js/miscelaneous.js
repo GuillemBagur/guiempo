@@ -23,6 +23,16 @@ export const UVIndex = {
   10: "🛑",
 };
 
-export function capitalizeFirstLetter(string) {
+export const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export const getLocation = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+}
+
+export const showPosition = position =>{
+  return position;
 }

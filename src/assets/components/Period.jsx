@@ -72,9 +72,12 @@ export default function Period({ data, userType, timeType }) {
             break;
           }
         }
-      } else if (key === "clouds"){
+      } else if (key === "clouds") {
         if (typeof el === "string") continue;
         data[key] = `${data[key]}%`;
+      } else if (key === "temp") {
+        if (["string", "number"].includes(typeof(el))) continue;
+        data[key] = data[key].day;
       }
     }
 
@@ -90,7 +93,7 @@ export default function Period({ data, userType, timeType }) {
       let formattedTime = time.split(":");
       formattedTime.pop();
       timeTypeText = `${formattedTime.join(":")}`;
-      if(time.split(":")[0] === "00"){
+      if (time.split(":")[0] === "00") {
         classes.push("margin-left-8");
       }
     }
@@ -100,7 +103,7 @@ export default function Period({ data, userType, timeType }) {
     console.log(el);
     if (!data[el]) return;
     console.log(data[el]);
-    if(!(typeof(data[el]) === "string" || typeof(data[el]) === "number")) return;
+    if (!(typeof data[el] === "string" || typeof data[el] === "number")) return;
     return (
       <li className={el}>
         <b>{uiTranscribe[el] || el}</b>
@@ -109,13 +112,17 @@ export default function Period({ data, userType, timeType }) {
     );
   };
 
+  console.log(data.temp);
+  const tempOverlay =
+    data.temp && data.temp !== "" ? <div className="temp-overlay"></div> : "";
+
   return (
     <li className={classes.join(" ")}>
-      <div className="temp-overlay"></div>
+      {tempOverlay}
       <span className="time">{timeTypeText}</span>
       <ul>
-        {defaultParams.map(el => renderParams(el))}
-        {preferedParams[userType].map(el => renderParams(el))}
+        {defaultParams.map((el) => renderParams(el))}
+        {preferedParams[userType].map((el) => renderParams(el))}
       </ul>
     </li>
   );
