@@ -1,6 +1,6 @@
 import React from "react";
 
-import { preferedParams, uiTranscribe } from "../js/data";
+import { defaultParams, preferedParams, uiTranscribe } from "../js/data";
 import { moonPhases, windRose, UVIndex } from "../js/miscelaneous";
 
 import "../css/Period.css";
@@ -52,7 +52,7 @@ export default function Period({ data, userType, timeType }) {
         for (let windKey in windRose) {
           const windName = windRose[windKey];
           // It always will get the lowest possible key in windRose
-          if (el-22.5 <= windKey) {
+          if (el - 22.5 <= windKey) {
             data[key] = windName;
             break;
           }
@@ -61,7 +61,7 @@ export default function Period({ data, userType, timeType }) {
         // To avoid calculous to already-parsed data
         if (typeof el === "string") continue;
 
-        const parsedSpeed = Math.floor((100 * el * 36.66) / 10) / 100;
+        const parsedSpeed = Math.floor((10 * el * 36.66) / 10) / 10;
         data[key] = `${parsedSpeed}Km/h`;
       } else if (key === "uvi") {
         for (let uviKey in UVIndex) {
@@ -72,35 +72,50 @@ export default function Period({ data, userType, timeType }) {
             break;
           }
         }
+      } else if (key === "clouds"){
+        if (typeof el === "string") continue;
+        data[key] = `${data[key]}%`;
       }
     }
+
+    console.log(data);
   };
 
   parseData(data);
-
-  let timeTypeIcon = "";
-  let timeTypeText = "";
-  if(timeType){
-    if(timeType === "dt"){
-      timeTypeText += `🕑 ${data[timeType]}`;
+  let timeTypeText;
+  let classes = ["Period", "squircle"];
+  if (timeType) {
+    if (timeType === "dt") {
+      const time = data[timeType];
+      let formattedTime = time.split(":");
+      formattedTime.pop();
+      timeTypeText = `${formattedTime.join(":")}`;
+      if(time.split(":")[0] === "00"){
+        classes.push("margin-left-8");
+      }
     }
-    
-    
   }
 
-  return (
-    <li className="Period squircle">
-      {timeTypeText}
-      <ul>
-        {preferedParams[userType].map((el) => {
-          if(!data[el]) return;
+  const renderParams = (el) => {
+    console.log(el);
+    if (!data[el]) return;
+    console.log(data[el]);
+    if(!(typeof(data[el]) === "string" || typeof(data[el]) === "number")) return;
+    return (
+      <li className={el}>
+        <b>{uiTranscribe[el] || el}</b>
+        {data[el]}
+      </li>
+    );
+  };
 
-          return (
-          <li>
-            <b>{uiTranscribe[el]}</b>
-            {data[el]}
-          </li>);
-        })}
+  return (
+    <li className={classes.join(" ")}>
+      <div className="temp-overlay"></div>
+      <span className="time">{timeTypeText}</span>
+      <ul>
+        {defaultParams.map(el => renderParams(el))}
+        {preferedParams[userType].map(el => renderParams(el))}
       </ul>
     </li>
   );

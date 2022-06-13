@@ -57,11 +57,9 @@ export default function WeatherApp() {
       setLocation(thisLocation.name);
       setCoords(newCoords);
       console.log(location, thisLocation.name);
-    }
-    catch(err) {
+    } catch (err) {
       alert("No se ha encontrado la ubicación. Revisa la ortografía");
     }
-    
   };
 
   /**
@@ -87,12 +85,20 @@ export default function WeatherApp() {
   const genList = (rawData) => {
     const data = rawData;
     console.log(data.length);
-    if(!data.length) return;
+    if (!data.length) return;
     console.log(2);
     setAvailableLocations(data);
   };
 
-  console.log(availableLocations);
+  // Saving all the stringified locations into an array
+  let uniqueAvailableLocations = [];
+  availableLocations.forEach((item) => {
+    const str = `${item.name}, ${item.country}`;
+    uniqueAvailableLocations.push(str);
+  });
+
+  
+  let renderedLocations = [];
 
   return (
     <div className="relative-wrapper">
@@ -103,14 +109,14 @@ export default function WeatherApp() {
           whenChange={handleSetUserType}
           givenClasses={["margin-right-4"]}
         />
-        <SearchBar
-          fetchList={fetchList}
-          search={handleSearch}
-        />
+        <SearchBar fetchList={fetchList} search={handleSearch} />
         <datalist id="available-locations">
-          {(availableLocations || []).map((loc) => (
-            <option value={`${loc.name}, ${loc.country}`} />
-          ))}
+          {(uniqueAvailableLocations || []).map((loc) => {
+            if(renderedLocations.includes(loc)) return;
+            renderedLocations.push(loc);
+            return(
+            <option value={loc} />
+          )})}
         </datalist>
       </div>
 
