@@ -25,14 +25,20 @@ export const UVIndex = {
 
 export const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
-}
+};
 
 export const getLocation = () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   }
-}
+};
 
-export const showPosition = position =>{
+export const showPosition = (position) => {
   return position;
-}
+};
+
+export const savePreferences = (key, value) => {
+  const savedOptions = JSON.parse(localStorage.getItem("guiempo")) || {};
+  savedOptions[key] = value;
+  localStorage.setItem("guiempo", JSON.stringify(savedOptions));
+};

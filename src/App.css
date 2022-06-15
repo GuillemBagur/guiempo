@@ -82,6 +82,10 @@ input {
   margin-right: 4rem;
 }
 
+.margin-left-4 {
+  margin-left: 4rem;
+}
+
 /* width */
 *::-webkit-scrollbar {
   width: 10px;

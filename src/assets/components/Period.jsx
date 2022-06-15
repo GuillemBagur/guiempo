@@ -11,7 +11,7 @@ import "../css/Period.css";
  *
  * @returns ReactObj
  */
-export default function Period({ data, userType, timeType }) {
+export default function Period({ data, userType, timeType, givenClasses }) {
   const pad = (num) => ("0" + num).slice(-2);
 
   const getTimeFromDate = (timestamp) => {
@@ -80,13 +80,12 @@ export default function Period({ data, userType, timeType }) {
         data[key] = data[key].day;
       }
     }
-
-    console.log(data);
   };
 
   parseData(data);
   let timeTypeText;
   let classes = ["Period", "squircle"];
+  (givenClasses || []).forEach(el => classes.push(el));
   if (timeType) {
     if (timeType === "dt") {
       const time = data[timeType];
@@ -99,10 +98,10 @@ export default function Period({ data, userType, timeType }) {
     }
   }
 
+  
+
   const renderParams = (el) => {
-    console.log(el);
     if (!data[el]) return;
-    console.log(data[el]);
     if (!(typeof data[el] === "string" || typeof data[el] === "number")) return;
     return (
       <li className={el}>
@@ -112,9 +111,8 @@ export default function Period({ data, userType, timeType }) {
     );
   };
 
-  console.log(data.temp);
   const tempOverlay =
-    data.temp && data.temp !== "" ? <div className="temp-overlay"></div> : "";
+    data.hasOwnProperty("temp") ? <div className="temp-overlay"></div> : "";
 
   return (
     <li className={classes.join(" ")}>

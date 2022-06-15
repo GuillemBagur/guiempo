@@ -8,8 +8,16 @@
     position: relative;
 }
 
+.Period.lonely{
+    padding: 5rem 7rem;
+    width: 60%;
+    margin: auto;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
 .Period ul{
-    list-style: none;
+    list-style: none !important;
     margin: 0;
     padding: 0;
     min-width: 14rem;
@@ -25,6 +33,11 @@
     display: inline-block;
     width: 2em;
     margin-right: 1rem;
+}
+
+.Period.squircle.lonely b{
+    font-size: 2rem;
+    width: 5rem;
 }
 
 .Period .time{
@@ -47,6 +60,11 @@
     opacity: .7;
 }
 
+.Period.lonely .temp{
+    top: 5rem;
+    right: 5rem;
+}
+
 .Period.squircle .temp b{
     font-size: 2rem;
     width: initial !important;
@@ -61,6 +79,12 @@
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: rgb(255, 115, 0);
+}
+
+.Period.lonely .temp-overlay{
+    width: 20rem;
+    top: -5rem;
+    right: -5rem;
 }
 
 

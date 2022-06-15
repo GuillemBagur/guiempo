@@ -5,8 +5,9 @@ import Select from "./Select";
 import SearchBar from "./SearchBar";
 import Background from "./Background";
 
-import { keys, coordinates } from "../js/data";
+import { keys, coordinates, periods } from "../js/data";
 import { preferedParams } from "../js/data.js";
+import { savePreferences } from "../js/miscelaneous";
 
 export default function WeatherApp() {
   let savedUserType = (
@@ -20,6 +21,7 @@ export default function WeatherApp() {
   const [userType, setUserType] = useState(savedUserType);
   const [weatherRes, setWeatherRes] = useState([]);
   const [location, setLocation] = useState("Ciutadella, ES");
+  const [currentPeriod, setCurrentPeriod] = useState("current");
   const [availableLocations, setAvailableLocations] = useState([]);
   const [coords, setCoords] = useState({
     lat: coordinates.lat,
@@ -33,10 +35,13 @@ export default function WeatherApp() {
   };
 
   const handleSetUserType = (value) => {
-    const savedOptions = JSON.parse(localStorage.getItem("guiempo")) || {};
-    savedOptions.userType = value;
-    localStorage.setItem("guiempo", JSON.stringify(savedOptions));
+    savePreferences("usertype", value);
     setUserType(value);
+  };
+
+  const handleSetPeriod = (value) => {
+    savePreferences("period", value);
+    setCurrentPeriod(value);
   };
 
   const fetchData = async (url, cb) => {
@@ -72,7 +77,10 @@ export default function WeatherApp() {
       currentLocation = res.coords;
       if (!currentLocation) return;
       console.log(currentLocation);
-      setCoords({lat: currentLocation.latitude, lon:currentLocation.longitude});
+      setCoords({
+        lat: currentLocation.latitude,
+        lon: currentLocation.longitude,
+      });
     });
   };
 
@@ -116,6 +124,8 @@ export default function WeatherApp() {
 
   let renderedLocations = [];
 
+  const timeType = currentPeriod === "hourly" ? "dt" : null;
+
   return (
     <div className="relative-wrapper">
       <div className="margin-top-1 centerer breakpoint">
@@ -137,12 +147,17 @@ export default function WeatherApp() {
 
       <div className="carrousels-container">
         <h3>{location}</h3>
+        <Select
+          defaultValue={currentPeriod}
+          options={periods}
+          whenChange={handleSetPeriod}
+          givenClasses={["margin-left-4"]}
+        />
         <Carrousel
           userType={userType}
-          rawData={weatherRes.hourly}
-          timeType="dt"
+          rawData={weatherRes[currentPeriod]}
+          timeType={timeType}
         />
-        <Carrousel userType={userType} rawData={weatherRes.daily} timeType="" />
       </div>
     </div>
   );

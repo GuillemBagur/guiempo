@@ -7,6 +7,8 @@ import "../css/Carrousel.css";
 
 export default function Carrousel({ rawData, userType, timeType }) {
   const data = rawData || [];
+
+  if(!data.length) return <Period givenClasses={["lonely"]} userType={userType} data={data} timeType={timeType} />;
   return (
     <div className="centerer">
       <ul className="Carrousel">

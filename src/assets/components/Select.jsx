@@ -14,7 +14,6 @@ export default function Select({ defaultValue, options, whenChange, givenClasses
 
   const classes = ['Select'];
   givenClasses.forEach(className => classes.push(className));
-  console.log(classes);
 
   const unFocus = () => {
     setFocus(false);
