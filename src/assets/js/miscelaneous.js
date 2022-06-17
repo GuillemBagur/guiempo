@@ -42,3 +42,10 @@ export const savePreferences = (key, value) => {
   savedOptions[key] = value;
   localStorage.setItem("guiempo", JSON.stringify(savedOptions));
 };
+
+export const mediaDependingClass = (className, width, maxMin) => {
+  const media = window.matchMedia(`(${maxMin}-width: ${width}px)`);
+  console.log(media, media.matches);
+  if (!media.matches) return;
+  return className;
+}

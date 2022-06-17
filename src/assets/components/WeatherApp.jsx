@@ -50,7 +50,7 @@ export default function WeatherApp() {
     const json = await response.json();
     res = json;
     cb(res);
-    console.log(res);
+    //console.log(res);
   };
 
   /**

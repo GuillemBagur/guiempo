@@ -3,12 +3,14 @@ import ScrollContainer from "react-indiana-drag-scroll";
 
 import Period from "./Period";
 
+import { mediaDependingClass } from "../js/miscelaneous";
+
 import "../css/Carrousel.css";
 
 export default function Carrousel({ rawData, userType, timeType }) {
   const data = rawData || [];
 
-  if(!data.length) return <Period givenClasses={["lonely"]} userType={userType} data={data} timeType={timeType} />;
+  if(!data.length) return <Period givenClasses={[mediaDependingClass("lonely", 400, "min")]} userType={userType} data={data} timeType={timeType} />;
   return (
     <div className="centerer">
       <ul className="Carrousel">
