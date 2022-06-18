@@ -29,4 +29,4 @@ export const uiTranscribe = {
   clouds: "☁️",
 };
 
-export const periods = ["current", "hourly", "daily"];
+export const periods = ["hourly", "daily"];

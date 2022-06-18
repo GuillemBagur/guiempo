@@ -21,7 +21,7 @@ export default function WeatherApp() {
   const [userType, setUserType] = useState(savedUserType);
   const [weatherRes, setWeatherRes] = useState([]);
   const [location, setLocation] = useState("Ciutadella, ES");
-  const [currentPeriod, setCurrentPeriod] = useState("current");
+  const [currentPeriod, setCurrentPeriod] = useState("hourly");
   const [availableLocations, setAvailableLocations] = useState([]);
   const [coords, setCoords] = useState({
     lat: coordinates.lat,
