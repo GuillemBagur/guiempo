@@ -1,0 +1,194 @@
+[
+  {
+    "dt": { "openweather": 23185, "weatherbit": 0, "visualcrossing": 0 },
+    "sunrise": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunset": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "temp": {
+      "openweather": 0,
+      "weatherbit": 0.7199999999999989,
+      "visualcrossing": 0.5977777777777789
+    },
+    "feels_like": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "pressure": {
+      "openweather": 2,
+      "weatherbit": 0,
+      "visualcrossing": 0.10000000000002274
+    },
+    "humidity": { "openweather": 4, "weatherbit": 0, "visualcrossing": 1 },
+    "dew_point": { "openweather": 2.41, "weatherbit": 0, "visualcrossing": 0 },
+    "uvi": {
+      "openweather": 8.65,
+      "weatherbit": 9.21,
+      "visualcrossing": 7.8100000000000005
+    },
+    "clouds": { "openweather": 71, "weatherbit": 27, "visualcrossing": 44.6 },
+    "visibility": { "openweather": 0, "weatherbit": 0, "visualcrossing": 9989 },
+    "wind_speed": {
+      "openweather": 9.870000000000001,
+      "weatherbit": 0,
+      "visualcrossing": 18.95
+    },
+    "wind_deg": { "openweather": 24, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_gust": {
+      "openweather": 12.03,
+      "weatherbit": 0,
+      "visualcrossing": 29.819999999999997
+    },
+    "weather": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 }
+  },
+  {
+    "dt": { "openweather": 63215, "weatherbit": 0, "visualcrossing": 0 },
+    "sunrise": { "openweather": 86414, "weatherbit": 0, "visualcrossing": 0 },
+    "sunset": { "openweather": 86410, "weatherbit": 0, "visualcrossing": 0 },
+    "temp": {
+      "openweather": 0,
+      "weatherbit": 2.120000000000001,
+      "visualcrossing": 2.0977777777777824
+    },
+    "feels_like": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "pressure": {
+      "openweather": 4,
+      "weatherbit": 0,
+      "visualcrossing": 2.7000000000000455
+    },
+    "humidity": {
+      "openweather": 6,
+      "weatherbit": 0,
+      "visualcrossing": 5.700000000000003
+    },
+    "dew_point": {
+      "openweather": 0.4499999999999993,
+      "weatherbit": 0,
+      "visualcrossing": 0
+    },
+    "uvi": {
+      "openweather": 7.99,
+      "weatherbit": 8.31,
+      "visualcrossing": 7.8100000000000005
+    },
+    "clouds": {
+      "openweather": 55,
+      "weatherbit": 34,
+      "visualcrossing": 60.599999999999994
+    },
+    "visibility": {
+      "openweather": 0,
+      "weatherbit": 0,
+      "visualcrossing": 9985.4
+    },
+    "wind_speed": {
+      "openweather": 8.82,
+      "weatherbit": 0,
+      "visualcrossing": 17.15
+    },
+    "wind_deg": { "openweather": 109, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_gust": {
+      "openweather": 9.86,
+      "weatherbit": 0,
+      "visualcrossing": 28.02
+    },
+    "weather": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 }
+  },
+  {
+    "dt": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunrise": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunset": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "temp": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "feels_like": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "pressure": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "humidity": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "dew_point": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "uvi": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "clouds": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "visibility": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_speed": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_deg": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_gust": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "weather": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 }
+  },
+  {
+    "dt": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunrise": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunset": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "temp": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "feels_like": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "pressure": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "humidity": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "dew_point": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "uvi": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "clouds": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "visibility": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_speed": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_deg": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_gust": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "weather": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 }
+  },
+  {
+    "dt": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunrise": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunset": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "temp": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "feels_like": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "pressure": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "humidity": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "dew_point": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "uvi": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "clouds": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "visibility": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_speed": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_deg": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_gust": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "weather": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 }
+  },
+  {
+    "dt": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunrise": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunset": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "temp": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "feels_like": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "pressure": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "humidity": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "dew_point": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "uvi": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "clouds": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "visibility": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_speed": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_deg": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_gust": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "weather": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 }
+  },
+  {
+    "dt": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunrise": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunset": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "temp": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "feels_like": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "pressure": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "humidity": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "dew_point": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "uvi": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "clouds": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "visibility": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_speed": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_deg": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_gust": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "weather": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 }
+  },
+  {
+    "dt": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunrise": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "sunset": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "temp": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "feels_like": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "pressure": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "humidity": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "dew_point": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "uvi": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "clouds": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "visibility": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_speed": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_deg": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "wind_gust": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 },
+    "weather": { "openweather": 0, "weatherbit": 0, "visualcrossing": 0 }
+  }
+]
